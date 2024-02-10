@@ -2,6 +2,7 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/2308.01546"><img src="https://img.shields.io/badge/arXiv-2308.01546-brightgreen.svg?style=flat-square"/></a>
+  <a href="https://colab.research.google.com/github/karchkha/MusicLDM/blob/main/MusicLDM_pub.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
   <a href="https://musicldm.github.io"><img src="https://img.shields.io/badge/Demo-github.io-orange"/></a>
   <a href="https://huggingface.co/ircam-reach/musicldm"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Diffusers-blue"/></a>
   <a href="https://huggingface.co/spaces/ircam-reach/musicldm-text-to-music"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-API-blue"/></a>
