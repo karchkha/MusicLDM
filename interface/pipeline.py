@@ -9,6 +9,7 @@ import yaml
 from src.latent_diffusion.models.musicldm import MusicLDM, DDPM, DDIMSampler
 from einops import repeat
 from torch import autocast
+import librosa
 
 
 def pad_wav(waveform, segment_length):
@@ -409,11 +410,11 @@ def style_transfer(
 
 
     assert original_audio_file_path is not None, "You need to provide the original audio file path"
-
-    audio_file_duration = get_duration(original_audio_file_path)
-
-    assert get_bit_depth(original_audio_file_path) == 16, "The bit depth of the original audio file %s must be 16" % original_audio_file_path
-
+    
+    audio_file_duration = librosa.get_duration(filename=original_audio_file_path) #get_duration(original_audio_file_path)
+    
+    # assert get_bit_depth(original_audio_file_path) == 16, "The bit depth of the original audio file %s must be 16" % original_audio_file_path
+    
     if(transfer_strength >= 1.00):
         print("Warning: The transfer must be from 0 to less than 1. 1 and more will result in Error; Automatically set duration to 0.99 seconds")
         transfer_strength = 0.99
@@ -423,10 +424,11 @@ def style_transfer(
 
     if(duration > audio_file_duration):
         print("Warning: Duration you specified %s-seconds must equal or smaller than the audio file duration %ss" % (duration, audio_file_duration))
-        # duration = round_up_duration(audio_file_duration)
+        duration = round_to_multiple(audio_file_duration, 2.5)
         print("Set new duration as %s-seconds" % duration)
-
-    # duration = round_up_duration(duration)
+    else:
+       duration = duration
+       print("Warning: Audio file is longer then duration you specified %s-seconds. We take duration you specified as input" % (duration))
 
     latent_diffusion = set_cond_text(latent_diffusion)
 
