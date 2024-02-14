@@ -30,8 +30,8 @@ h5py==3.8.0
 huggingface-hub==0.12.1
 idna==3.4
 imageio==2.26.0
-importlib-metadata==6.0.0
-importlib-resources==5.12.04
+# importlib-metadata==6.0.0
+# importlib-resources==5.12.04
 jaraco-classes==3.2.3
 jeepney==0.8.0
 joblib==1.2.0
