@@ -52,7 +52,7 @@ more-itertools==9.1.0
 msgpack==1.0.4
 multidict==6.0.4
 networkx==3.0
-numba==0.56.4
+numba==0.59.0
 numpy==1.23.5
 oauthlib==3.2.2
 omegaconf==2.3.0
